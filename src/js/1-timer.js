@@ -17,7 +17,7 @@ const options = {
 
     if (selectedDate < new Date()) {
            iziToast.error({
-             message: 'Please choose a date in the future!',
+             message: 'Please choose a date in the future to enable the Start button!',
              position: 'topRight',
              icon: false,
              progressBar: false,
@@ -44,7 +44,7 @@ btnStart.addEventListener('click', () => {
       clearInterval(timerId);
       iziToast.info({
         title: 'Timer finished',
-        message: 'Time is up!',
+        message: 'Time is up! The countdown has ended.',
       });
       updateTimerDisplay(0, 0, 0, 0);
       return;
