@@ -6,18 +6,7 @@ document.querySelector('.form').addEventListener('submit', function (event) {
 
   const delay = Number(document.querySelector('input[name="delay"]').value);
   const state = document.querySelector('input[name="state"]:checked').value;
-  
-  if (delay <= 0) {
-    iziToast.error({
-      message: 'Please enter a positive number for delay!', // Повідомлення про помилку
-      position: 'topRight',
-      icon: false,
-      progressBar: false,
-      close: false,
-    });
-    return; // Зупиняємо виконання функції, якщо delay некоректний
-  }
-  
+
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (state === 'fulfilled') {
